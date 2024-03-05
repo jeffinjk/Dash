@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
+<title>Dash</title>
 <style>
   /* CSS styles for the dashboard */
   body {
@@ -40,7 +40,22 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <style>
+          .oval {
+
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 10%;
+            transition: background-color 1s;
+          }
+
+          .oval:hover {
+            background-color: red;
+          }
+        </style>
+
+        <div class="oval">Home</div>
         <li><a href="#">Dashboard</a></li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Settings</a></li>
@@ -56,5 +71,8 @@
   <!-- Your website content goes here -->
   <h2>Welcome to Your Website</h2>
   <p>This is the main content of your website...</p>
-</body>
-</html>
+  <script>
+    document.querySelector('.oval').addEventListener('click', function() {
+      window.location.href = 'newpage.html';
+    });
+  </script>
