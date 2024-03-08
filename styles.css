@@ -1,15 +1,14 @@
-.{
+/* .body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-}
+} */
 
 .navbar{
     background: #131313;
     height: 80px;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
@@ -24,13 +23,13 @@
     z-index: 1;
     width: 100%;
     max-width: 1300px;
-    margin: 0 auto;
-    padding:0 auto;
+    margin: 0px;
+    padding: 0px;
 }
 #navbar__logo{
     display: flex;
-    background-color:#ff8177;
-    background-image: linear-gradient(to top, #ff8177 0%, #ffb199 100%);
+    background-color:#da2519;
+    background-color: linear-gradient(to top, #ff8177 100%, #f4efee 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     background-clip: text;
