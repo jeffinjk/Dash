@@ -43,4 +43,17 @@
     text-decoration:none;
     font-size: 2rem;
 }
+
+.fa-gem{
+    margin-left: .5rem;
+}
+
+.navbar__menu{
+    display: flex;
+    align-items:center;
+    list-style: none;
+    text-align: center;
+}
+
+
     
