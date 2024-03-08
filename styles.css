@@ -74,8 +74,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 24px;
-    border: none;
+    padding:0%;
+    
 }
 
 #mobile-menu{
