@@ -28,8 +28,8 @@
 }
 #navbar__logo{
     display: flex;
-    background-color:#ff8177;
-    background-image: linear-gradient(to top, #ff8177 0%, #ffb199 100%);
+    background-color:#da2519;
+    background-color: linear-gradient(to top, #ff8177 100%, #f4efee 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     background-clip: text;
