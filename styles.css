@@ -90,11 +90,35 @@
     width: 100%;
     border:none;
     outline: none;
-    border-radius: 50px;
+    border-radius: 25px;
     background: #c75465;
+    color:#fff;
 }
 
-#mobile-menu{
-    display: none;
+.button:hover{
+    background:#3d25ca;
+    transition: all 0.3s ease;
+
+}
+
+.navbar__links:hover{
+    color:#ff8177;
+    transition:all  0.3s ease;
+}
+
+
+@media screen and (max-width: 960px){
+    .navbar__container{
+        display:flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width:fit-content;
+        padding:0%;
+    }
+    .navbar__menu{
+        
+    }
 }
     
