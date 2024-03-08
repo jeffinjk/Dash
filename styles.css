@@ -74,8 +74,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:0%;
+    padding:0 1rem;
+    width:auto;
+
     
+}
+
+.button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border:none;
+    outline: none;
+    border-radius: 15px;
+    background: #c75465;
 }
 
 #mobile-menu{
