@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGN-IN</title>
-    <link rel="stylesheet" href="styles.css">  
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="time.js"></script> 
 </head>
 <body>
     <div class="container">
@@ -22,34 +23,6 @@
         <button id="timebutton"onclick="time()">TIME</button>
 
     </div>
-    <script>
-        function time(){
-            var timeButton = document.getElementById("timebutton");
-            if (timeButton.innerHTML === "TIME") {
-            var d = new Date();
-            var h = d.getHours();
-            var m = d.getMinutes();
-            var s = d.getSeconds();
-            var session = "AM";
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            h = (h < 10) ? "0" + h : h;
-            m = (m < 10) ? "0" + m : m;
-            s = (s < 10) ? "0" + s : s;
-            var time = h + ":" + m + ":" + s + " " + session;
-            timeButton.innerHTML = time;
-            setTimeout(function() {
-                timeButton.innerHTML = "TIME";
-            },2000);
-            }
-        }
-
-        document.getElementById("timebutton").addEventListener("click", time);
-    </script>
+    
 </body>
 </html>
