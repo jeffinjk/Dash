@@ -6,3 +6,5 @@ function time() {
     const currentTime = `${hours}:${minutes}:${seconds}`;
     document.getElementById('timeButton').innerText = currentTime;
 }
+
+time(); // Call the time() function to set the initial time for the button
