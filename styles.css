@@ -82,17 +82,20 @@ a:hover {
 
 .time {
     position: absolute;
-    top: 12px;
-    left: 5px;
-    background-color: linear-gradient(45deg, #498acb, #ca376f);
-    padding: 1px;
-    border: 1px  #291f1f;
-    border-radius: 2px;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(45deg, #3a5979, #1c2833);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.time p {
+.time button {
     margin: 0;
     cursor: pointer;
-    color: #007bff;
-    text-decoration: underline;
+    color: rgb(147, 53, 53);
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
 }
