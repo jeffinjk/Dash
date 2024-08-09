@@ -8,6 +8,6 @@ function time() {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    time(); // Call the time() function to set the initial time for the button
-    setInterval(time, 1000); // Update the time every second
+    time();
+    setInterval(time, 1000); 
 });
