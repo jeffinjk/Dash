@@ -7,4 +7,7 @@ function time() {
     document.getElementById('timeButton').innerText = currentTime;
 }
 
-time(); // Call the time() function to set the initial time for the button
+document.addEventListener('DOMContentLoaded', (event) => {
+    time(); // Call the time() function to set the initial time for the button
+    setInterval(time, 1000); // Update the time every second
+});
