@@ -9,5 +9,12 @@ function time() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     time();
-    setInterval(time, 1000); 
+    function updateTime() {
+        time();
+        requestAnimationFrame(updateTime);
+      }
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        updateTime();
+      });
 });
