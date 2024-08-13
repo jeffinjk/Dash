@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGN-IN</title>
     <link rel="stylesheet" href="styles.css"> 
-    
 </head>
 <body>
     <div class="container">
         <h1>SIGN-IN</h1>
-        <form action="#" method="post">
+        <form id="signinForm">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" required>
             <label for="password">Password:</label>
@@ -20,10 +19,30 @@
         <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
     </div>
     <div class="time">
-        <button id="timebutton"onclick="time()">TIME</button>
-
+        <button id="timebutton" onclick="time()">TIME</button>
     </div>
     <script src="time.js"></script> 
-    
+    <script>
+        document.getElementById('signinForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            try {
+                const response = await fetch('/addUser', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert('User data saved successfully');
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    </script>
 </body>
 </html>
