@@ -11,7 +11,7 @@ const mongo = async () => {
 
         const db = client.db(dbName);
 
-        const { username, password } = { username: "blaaa", password: "password" };
+        const { username, password } = { username: "jeff", password: "pass" };
         const collection = db.collection('users');
 
         const res = await collection.insertOne({ username, password });
