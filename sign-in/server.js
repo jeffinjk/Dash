@@ -32,7 +32,7 @@ app.post('/addUser', async (req, res) => {
         const result = await collection.insertOne({ username, password });
         res.status(201).send({ message: 'User data saved successfully', result });
     } catch (err) {
-        res.status(500).send({ message: 'Error occurred while saving user data', error: err });
+        res.status(500).send({ message: 'Error occurred while saving user data', error: err.message });
     }
 });
 
