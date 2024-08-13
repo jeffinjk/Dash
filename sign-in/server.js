@@ -1,47 +1,27 @@
-const express = require('express');
-const { MongoClient } = require('mongodb');
-const bodyParser = require('body-parser');
+const mongodb = require('mongodb');
 
-const app = express();
-const port = 5500;
+const mongo = async () => {
+    const url = 'mongodb://localhost:27017';
+    const dbName = 'mydatabase';
 
-// MongoDB connection URL and database name
-const url = 'mongodb://localhost:27017'; // MongoDB server URL
-const dbName = 'mydatabase'; // Your database name
+    try {
+        const client = new mongodb.MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+        await client.connect();
+        console.log('Connected to MongoDB');
 
-// Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+        const db = client.db(dbName);
 
-// Connect to MongoDB
-const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-let db;
+        const { username, password } = { username: "blaaa", password: "password" };
+        const collection = db.collection('users');
 
-client.connect(err => {
-    if (err) throw err;
-    db = client.db(dbName);
-    console.log('Connected to MongoDB');
-});
+        const res = await collection.insertOne({ username, password });
+        console.log('User data saved successfully');
+        console.log(res);
 
-// Serve static files (HTML, CSS, JS)
-app.use(express.static('public'));
+        await client.close();
+    } catch (err) {
+        console.error('An error occurred:', err);
+    }
+};
 
-// Handle form submissions
-app.post('/submit', (req, res) => {
-    const { username, password } = req.body;
-    const collection = db.collection('users');
-
-    // Insert user data into MongoDB
-    collection.insertOne({ username, password }, (err, result) => {
-        if (err) {
-            res.status(500).send('Error occurred while saving user data');
-        } else {
-            res.status(200).send('User data saved successfully');
-        }
-    });
-});
-
-// Start the server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+mongo();
